@@ -5,13 +5,10 @@ import { HomePage } from "../home/home"
 import { ListPage } from "../list/list"
 
 @Component({
-  selector: 'page-tabs',
-  templateUrl: 'tabs.html'
+  selector: 'page-news',
+  templateUrl: 'news.html'
 })
-export class Tabs {
-
-  newsTab = ListPage;
-  eventsTab = ListPage;
+export class News {
 
   constructor(public navCtrl: NavController) {
 
