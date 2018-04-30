@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Novidades</ion-title>
+  </ion-navbar>
+</ion-header>  
+<ion-content>
+  <p>Novidades</p>
+  <ion-list>
+    <ion-item *ngFor="let n of news" (click)="itemTapped($event, n)">  
+      <ion-card-content text-wrap>
+        <img src="../assets/imgs/news1.jpg">
+        <p>{{n.title}}</p>
+        <ion-icon item-end name="photos"></ion-icon>
+        <ion-icon item-end name="videocam"></ion-icon>
+        <ion-icon item-end name="link"></ion-icon>
+      </ion-card-content>  
+    </ion-item>
+  </ion-list>  
+</ion-content>
+  
