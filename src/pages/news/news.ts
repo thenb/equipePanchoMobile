@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HTTP } from '@ionic-native/http';
 
 /**
  * Generated class for the News page.
@@ -14,15 +15,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsPage {
 
-  news: Array<{title: string}>;
+  news: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.news = [];
-    for (let i = 1; i < 3; i++) {
-      this.news.push({
-        title: 'Item ' + i,       
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HTTP) {
+
+    console.log("teste");
+    this.http.get('https://equipepancho.herokuapp.com/getAllEvents', {}, {})
+      .then(data => {
+
+        console.log(data.data);
+        this.news = JSON.parse(data.data);
+
+        console.log(this.news);
+
+      })
+      .catch(error => {
+
+        console.log(error.status);
+        console.log(error.error); // error message as string
+        console.log(error.headers);
+
       });
-    }
   }
 
   ionViewDidLoad() {

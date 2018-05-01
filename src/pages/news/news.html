@@ -7,11 +7,10 @@
   </ion-navbar>
 </ion-header>  
 <ion-content>
-  <p>Novidades</p>
   <ion-list>
     <ion-item *ngFor="let n of news" (click)="itemTapped($event, n)">  
       <ion-card-content text-wrap>
-        <img src="n.url_imagens">
+        <img src={{n.url_imagens}}>
         <p>{{n.titulo}}</p>
         <ion-icon item-right class="icon-list" name="photos"></ion-icon>
         <ion-icon item-right class="icon-list" name="videocam"></ion-icon>
