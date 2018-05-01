@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { HomePage } from "../home/home"
-import { ListPage } from "../list/list"
-
+@IonicPage()
 @Component({
   selector: 'page-tabs',
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
 })
-export class Tabs {
+export class TabsPage {
+  newsRoot = 'NewsPage';
+  eventsRoot = 'EventsPage';
+  myIndex: number;
 
-  newsTab = ListPage;
-  eventsTab = ListPage;
-
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.myIndex = navParams.data.tabIndex || 0;
   }
 
 }

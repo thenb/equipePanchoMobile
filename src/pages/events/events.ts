@@ -2,31 +2,31 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the News page.
+ * Generated class for the Tab2Page page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-news',
-  templateUrl: 'news.html',
+  selector: 'page-events',
+  templateUrl: 'events.html',
 })
-export class NewsPage {
+export class EventsPage {
 
-  news: Array<{title: string}>;
+  events: Array<{title: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.news = [];
+    this.events = [];
     for (let i = 1; i < 3; i++) {
-      this.news.push({
+      this.events.push({
         title: 'Item ' + i,       
       });
     }
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewsPage');
+    console.log('ionViewDidLoad EventsPage');
   }
 
 }
