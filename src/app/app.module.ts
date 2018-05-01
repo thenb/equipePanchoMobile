@@ -4,9 +4,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { HttpModule } from '@angular/http';
+import { HTTP } from '@ionic-native/http';
+
 import { MyApp } from './app.component';
-import { NewsPage } from '../pages/news/news';
-import { EventsPage } from '../pages/events/events';
 import { MenuPage } from '../pages/menu/menu';
 
 
@@ -18,6 +19,7 @@ import { MenuPage } from '../pages/menu/menu';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -28,6 +30,7 @@ import { MenuPage } from '../pages/menu/menu';
   providers: [
     StatusBar,
     SplashScreen,
+    HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -11,8 +11,8 @@
   <ion-list>
     <ion-item *ngFor="let n of news" (click)="itemTapped($event, n)">  
       <ion-card-content text-wrap>
-        <img src="http://hortonhighschool.ca/wp-content/uploads/2017/10/News.jpg">
-        <p>{{n.title}}</p>
+        <img src="n.url_imagens">
+        <p>{{n.titulo}}</p>
         <ion-icon item-right class="icon-list" name="photos"></ion-icon>
         <ion-icon item-right class="icon-list" name="videocam"></ion-icon>
         <ion-icon item-right class="icon-list" name="link"></ion-icon>
