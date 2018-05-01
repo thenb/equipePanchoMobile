@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HTTP } from '@ionic-native/http';
+import { HttpClient} from '@angular/common/http';
 
 /**
  * Generated class for the News page.
@@ -17,25 +17,16 @@ export class NewsPage {
 
   news: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HTTP) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
 
-    console.log("teste");
-    this.http.get('https://equipepancho.herokuapp.com/getAllEvents', {}, {})
-      .then(data => {
 
-        console.log(data.data);
-        this.news = JSON.parse(data.data);
-
-        console.log(this.news);
-
-      })
-      .catch(error => {
-
-        console.log(error.status);
-        console.log(error.error); // error message as string
-        console.log(error.headers);
-
-      });
+    this.http.get('https://equipepancho.herokuapp.com/getAllEvents')
+      // Call map on the response observable to get the parsed people object
+      .toPromise().then(
+        data => {
+          this.news = data;
+        }
+      );
   }
 
   ionViewDidLoad() {
