@@ -1,6 +1,7 @@
 import { PageInterface } from './menu';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
+import { AuthService } from '../../services/auth.service';
 
 export interface PageInterface {
   title: string;
@@ -14,6 +15,7 @@ export interface PageInterface {
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',
+  providers: [AuthService]
 })
 export class MenuPage {
 
@@ -26,7 +28,7 @@ export class MenuPage {
     { title: 'Eventos', pageName: 'EventsPage', tabComponent: 'EventsPage', index: 1, icon: 'contacts' }
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthService) {  }
 
   openPage(page: PageInterface) {
     let params = {};
@@ -56,5 +58,10 @@ export class MenuPage {
       return 'primary';
     }
   }
+
+  doLogout() {
+    this.auth.logout();
+    this.navCtrl.setRoot('LoginPage');
+  }  
 
 }
