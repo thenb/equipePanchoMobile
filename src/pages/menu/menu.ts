@@ -22,8 +22,8 @@ export class MenuPage {
   @ViewChild(Nav) nav: Nav;
 
   pages: PageInterface[] = [
-    { title: 'Novidades', pageName: 'NewsPage', tabComponent: 'NewsPage', index: 0, icon: 'home' },
-    { title: 'Eventos', pageName: 'EventsPage', tabComponent: 'EventsPage', index: 1, icon: 'contacts' }
+    { title: 'Novidades', pageName: 'NewsPage', tabComponent: 'NewsPage', index: 0, icon: 'book' },
+    { title: 'Eventos', pageName: 'EventsPage', tabComponent: 'EventsPage', index: 1, icon: 'calendar' }
   ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {  }
