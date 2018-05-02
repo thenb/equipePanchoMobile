@@ -10,11 +10,11 @@
   <ion-list>
     <ion-item *ngFor="let n of news" (click)="itemTapped($event, n)">  
       <ion-card-content text-wrap>
-        <img src={{n.url_imagens}}>
+        <img *ngIf="n.url_imagens && n.url_imagens.length > 0" src={{n.url_imagens[1]}}>
         <p>{{n.titulo}}</p>
-        <ion-icon item-right class="icon-list" name="photos"></ion-icon>
-        <ion-icon item-right class="icon-list" name="videocam"></ion-icon>
-        <ion-icon item-right class="icon-list" name="link"></ion-icon>
+        <ion-icon *ngIf="n.url_imagens && n.url_imagens.length > 0" item-right class="icon-list" name="photos" ></ion-icon>
+        <ion-icon *ngIf="n.url_videos && n.url_videos.length > 0" item-right class="icon-list" name="videocam"></ion-icon>
+        <ion-icon *ngIf="n.url_links && n.url_links.length > 0" item-right class="icon-list" name="link"></ion-icon>
       </ion-card-content>  
     </ion-item>
   </ion-list>  

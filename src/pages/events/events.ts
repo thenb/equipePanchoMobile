@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient} from '@angular/common/http';
 
 /**
  * Generated class for the Tab2Page page.
@@ -14,15 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventsPage {
 
-  events: Array<{title: string}>;
+  events: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.events = [];
-    for (let i = 1; i < 3; i++) {
-      this.events.push({
-        title: 'Item ' + i,       
-      });
-    }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+
+    this.http.get('https://equipepancho.herokuapp.com/getAllNews')
+      // Call map on the response observable to get the parsed people object
+      .toPromise().then(
+        data => {
+          this.events = data;
+        }
+      );
   }
 
   ionViewDidLoad() {
