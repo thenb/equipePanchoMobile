@@ -11,6 +11,7 @@
     <ion-item *ngFor="let e of events" (click)="itemTapped($event, e)">       
         <ion-card-content text-wrap>
           <img *ngIf="e.url_imagens && e.url_imagens.length > 0" src={{e.url_imagens[1]}}>
+          <img *ngIf="!e.url_imagens || e.url_imagens.length == 0" src="http://hortonhighschool.ca/wp-content/uploads/2017/10/News.jpg">
           <p>{{e.titulo}}</p>
           <ion-icon *ngIf="e.url_imagens && e.url_imagens.length > 0" item-right class="icon-list" name="photos"></ion-icon>
           <ion-icon *ngIf="e.url_videos && e.url_videos.length > 0" item-right class="icon-list" name="videocam"></ion-icon>
