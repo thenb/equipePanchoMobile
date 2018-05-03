@@ -19,7 +19,7 @@ export class EventsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
 
-    this.http.get('https://equipepancho.herokuapp.com/getAllNews')
+    this.http.get('https://equipepancho.herokuapp.com/getAllEvents')
       // Call map on the response observable to get the parsed people object
       .toPromise().then(
         data => {
