@@ -2,6 +2,7 @@ import { PageInterface } from './menu';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
+import { AlertController } from 'ionic-angular';
 
 export interface PageInterface {
   title: string;
@@ -28,7 +29,7 @@ export class MenuPage {
     { title: 'Eventos', pageName: 'EventsPage', tabComponent: 'EventsPage', index: 1, icon: 'calendar' }
   ]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthService) {  }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthService, private alertCtrl: AlertController) {  }
 
   openPage(page: PageInterface) {
     let params = {};
@@ -64,4 +65,25 @@ export class MenuPage {
     this.navCtrl.setRoot('LoginPage');
   }  
 
+
+  presentConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Deseja sair?',
+      message: 'Seus dados não serão perdidos.',
+      buttons: [
+        {
+          text: 'Não',
+          role: 'nao',
+          handler: () => { }
+        },
+        {
+          text: 'Sim',
+          handler: () => {
+            this.doLogout();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
 }
