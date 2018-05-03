@@ -13,8 +13,8 @@
     <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
     {{ p.title }}
   </button>
-  <button ion-item menuClose (click)="doLogout()">
-    <ion-icon item-start [name]="exit" [color]="primary"></ion-icon>
+  <button ion-item menuClose (click)="presentConfirm()">
+    <ion-icon item-start ios="ios-exit" md="md-exit" [color]="primary"></ion-icon>
     Sair
   </button>
 </ion-list>
