@@ -15,7 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SingleNewsPage {
 
+  newsRoot = 'SingleEventPage';
+
+  myIndex: number;
+  news: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+    console.log('Valor existe: ' + this.navParams.get('news'));
+    this.news = this.navParams.get('news');
+    console.log('Valor ficou: ' + this.news);
+
   }
 
   ionViewDidLoad() {

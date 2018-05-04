@@ -7,12 +7,24 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>single_news</ion-title>
+    <ion-title>{{news.titulo}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
-</ion-content>
+<ion-content>
+    <ion-card-content text-wrap>
+      <p align="right">{{news.data_criacao}}</p>
+      <img *ngIf="news.url_imagens && news.url_imagens.length > 0" src={{news.url_imagens[1]}}>
+      <img *ngIf="!news.url_imagens || news.url_imagens.length == 0" src="http://hortonhighschool.ca/wp-content/uploads/2017/10/News.jpg">
+      <p>{{news.titulo}}</p>
+      <p>{{news.descricao}}</p>
+      <ion-tabs [selectedIndex]="myIndex" tabsPlacement=top>
+        <ion-tab [root]="newsRoot" tabTitle="Notícia" name="paper"></ion-tab>
+        <ion-tab [root]="newsRoot" tabTitle="Fotos" name="photos"></ion-tab>
+        <ion-tab [root]="newsRoot" tabTitle="Vídeos" tabIcon="videocam"></ion-tab>
+        <ion-tab [root]="newsRoot" tabTitle="URL's" tabIcon="link"></ion-tab>
+      </ion-tabs>
+    </ion-card-content> 
+  </ion-content>

@@ -33,4 +33,9 @@ export class NewsPage {
     console.log('ionViewDidLoad NewsPage');
   }
 
+  itemTapped(e : {}) {
+    console.log('Valor saiu: ' + e);
+    this.navCtrl.push('SingleNewsPage', {news: e});
+  }
+
 }
