@@ -1,9 +1,11 @@
 <ion-menu [content]="content">
-
+  <ion-buttons end><ion-icon item-start ios="ios-exit" md="md-exit" [color]="primary"></ion-icon></ion-buttons>
 <ion-header>
   <ion-navbar>
     <ion-title>Menu</ion-title>
+    
   </ion-navbar>
+  
 
 </ion-header>
 
@@ -19,7 +21,6 @@
   </button>
 </ion-list>
 </ion-content>
-
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

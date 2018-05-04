@@ -68,8 +68,8 @@ export class MenuPage {
 
   presentConfirm() {
     let alert = this.alertCtrl.create({
-      title: 'Deseja sair?',
-      message: 'Seus dados não serão perdidos.',
+      title: 'Efetuar Logout?',
+      message: 'Você deseja efetuar o logout?',
       buttons: [
         {
           text: 'Não',
