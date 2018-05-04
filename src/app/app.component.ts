@@ -18,8 +18,8 @@ export class MyApp {
 
   initializeApp() {
     var token = window.localStorage.getItem('id_token');
-    console.log(token);
-    if(token!=null){
+    var expiresAt = JSON.parse(window.localStorage.getItem('expires_at'));
+    if(token!=null || (Date.now() < expiresAt)){
       this.rootPage = 'MenuPage';
     }
 
