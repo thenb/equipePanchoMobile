@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule} from '@angular/common/http';
 import { MenuPage } from '../pages/menu/menu';
 import { MyApp } from './app.component';
+import {InAppBrowser } from '@ionic-native/in-app-browser'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MyApp } from './app.component';
     StatusBar,
     SplashScreen,
     HttpClientModule,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

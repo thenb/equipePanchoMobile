@@ -10,7 +10,10 @@ import Auth0Cordova from '@auth0/cordova';
   templateUrl: 'app.html'
 })
 export class MyApp {  
-  rootPage: any = 'LoginPage';
+  
+  //Essa linha ativa o login do auth0
+  //rootPage: any = 'LoginPage';
+  rootPage: any = 'MenuPage';
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();  
@@ -18,8 +21,8 @@ export class MyApp {
 
   initializeApp() {
     var token = window.localStorage.getItem('id_token');
-    console.log(token);
-    if(token!=null){
+    var expiresAt = JSON.parse(window.localStorage.getItem('expires_at'));
+    if(token!=null || (Date.now() < expiresAt)){
       this.rootPage = 'MenuPage';
     }
 

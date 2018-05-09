@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { HttpClient} from '@angular/common/http';
 
 /**
@@ -17,14 +17,18 @@ export class NewsPage {
 
   news: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient, public loadingController: LoadingController) {
 
-
+    let loader = this.loadingController.create({
+      content: "Carregando"
+    });  
+    loader.present();
     this.http.get('https://equipepancho.herokuapp.com/getAllNews')
       // Call map on the response observable to get the parsed people object
       .toPromise().then(
         data => {
           this.news = data;
+          loader.dismiss();
         }
       );
   }

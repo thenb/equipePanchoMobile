@@ -1,0 +1,17 @@
+<!--
+  Generated template for the UrlListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+
+    <ion-list *ngIf="urlList && urlList.length > 0">
+        <ion-item  ion-item *ngFor="let url of urlList">
+          <p (click)="openWithSystemBrowser( url )">
+              {{ url }}
+          </p>
+        </ion-item>
+      </ion-list>
+      <p *ngIf="!urlList || urlList.length == 0" >Não possui links</p>
+</ion-content>

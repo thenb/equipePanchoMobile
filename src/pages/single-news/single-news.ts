@@ -15,16 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SingleNewsPage {
 
-  newsRoot = 'SingleEventPage';
+
+  dataRoot = 'NewsDataPage';
+  imagesRoot = 'ImageListPage';
+  videosRoot = 'VideoListPage';
+  urlsRoot = 'UrlListPage';
+  data = {};
 
   myIndex: number;
   news: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
-    console.log('Valor existe: ' + this.navParams.get('news'));
+
     this.news = this.navParams.get('news');
-    console.log('Valor ficou: ' + this.news);
+    this.data = this.news;
 
   }
 

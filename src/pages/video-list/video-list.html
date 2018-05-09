@@ -1,0 +1,15 @@
+<!--
+  Generated template for the VideoListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+
+  <ion-list *ngIf="videoList && videoList.length > 0">
+    <ion-item  ion-item *ngFor="let video of videoList">
+      <iframe width="100%" height="150" src="https://www.youtube.com/embed/MLleDRkSuvk" frameborder="0" allowfullscreen></iframe>
+    </ion-item>
+  </ion-list>
+  <p *ngIf="!videoList || videoList.length == 0" >Não possui vídeos</p>
+</ion-content>
