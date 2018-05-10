@@ -8,7 +8,7 @@
 
   <ion-list *ngIf="imgList && imgList.length > 0">
     <ion-item  ion-item *ngFor="let img of imgList" (click)="picShow(img)">
-      <img src={{img}}>
+      <img src={{img}} (click)='showImage(img)'>
     </ion-item>
   </ion-list>
   <p *ngIf="!imgList || imgList.length == 0" >Não possui imagens</p>

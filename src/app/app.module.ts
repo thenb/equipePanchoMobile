@@ -7,6 +7,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { MenuPage } from '../pages/menu/menu';
 import { MyApp } from './app.component';
 import {InAppBrowser } from '@ionic-native/in-app-browser'
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {InAppBrowser } from '@ionic-native/in-app-browser'
     SplashScreen,
     HttpClientModule,
     InAppBrowser,
+    PhotoViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
