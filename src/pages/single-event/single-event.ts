@@ -15,7 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SingleEventPage {
 
+  dataRoot = 'NewsDataPage';
+  imagesRoot = 'ImageListPage';
+  videosRoot = 'VideoListPage';
+  urlsRoot = 'UrlListPage';
+  data = {};
+
+  myIndex: number;
+  event: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.event = this.navParams.get('news');
+    this.data = this.event;
   }
 
   ionViewDidLoad() {

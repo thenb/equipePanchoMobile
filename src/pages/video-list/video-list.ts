@@ -27,4 +27,7 @@ export class VideoListPage {
     console.log('ionViewDidLoad VideoListPage');
   }
 
+  onLoad() {
+    
+  }
 }

@@ -8,6 +8,7 @@
 
     <ion-list *ngIf="urlList && urlList.length > 0">
         <ion-item  ion-item *ngFor="let url of urlList">
+          <p>Título do link</p>
           <p (click)="openWithSystemBrowser( url )">
               {{ url }}
           </p>

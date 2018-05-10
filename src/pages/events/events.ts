@@ -35,4 +35,8 @@ export class EventsPage {
     console.log('ionViewDidLoad EventsPage');
   }
 
+  itemTapped(e : {}) {
+    this.navCtrl.push('SingleEventPage', {news: e});
+  }
+
 }
