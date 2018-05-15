@@ -1,0 +1,10 @@
+<ion-content>
+  <ion-card-content text-wrap>
+      <p align="right">{{event.data_inicio}} - {{event.data_fim}}</p>
+      <img *ngIf="event.url_imagens && event.url_imagens.length > 0" src={{event.url_imagens[1]}}>
+      <img *ngIf="!event.url_imagens || event.url_imagens.length == 0" src="http://hortonhighschool.ca/wp-content/uploads/2017/10/News.jpg">
+      <p>{{event.titulo}}</p>
+      <p>{{event.localizacao}}</p>
+      <p>{{event.descricao}}</p>
+    </ion-card-content> 
+</ion-content>

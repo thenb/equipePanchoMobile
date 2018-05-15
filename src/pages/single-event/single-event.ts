@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SingleEventPage {
 
-  dataRoot = 'NewsDataPage';
+  dataRoot = 'EventDataPage';
   imagesRoot = 'ImageListPage';
   videosRoot = 'VideoListPage';
   urlsRoot = 'UrlListPage';
@@ -25,7 +25,7 @@ export class SingleEventPage {
   event: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.event = this.navParams.get('news');
+    this.event = this.navParams.get('event');
     this.data = this.event;
   }
 

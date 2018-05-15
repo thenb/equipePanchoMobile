@@ -36,7 +36,7 @@ export class EventsPage {
   }
 
   itemTapped(e : {}) {
-    this.navCtrl.push('SingleEventPage', {news: e});
+    this.navCtrl.push('SingleEventPage', {event: e});
   }
 
 }
